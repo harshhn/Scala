@@ -36,8 +36,6 @@ object helloWorld {
 			println (i)
 		}
 
-		i = 0
-
 		// simple list of String
 		// initialize value (value cant change)
 		val lst = List("a", "b", "c", "d")
@@ -49,12 +47,28 @@ object helloWorld {
 		}
 
 		//another way to iterate through list using for loop
-		//here we use i as temp var to hold list items
+		//here we use item as temp var to hold list items
 		println("For loop iterating through a list method 2")
-		for (i <- lst) {
-			println("List Item: "+i)
+		for (item <- lst) {
+			println("List Item: "+item)
 		}
 
+		//if statements in scala returns a value
+		val flg = if(i < 5) "less" else "more"
+		println("Flag: "+flg+" since i value is "+i)
+
+		//combining for and if
+		//lets try to get all even numbers from 1 to 20
+		//store it in a list and print it
+		var evenNums = for { i <- 1 to 20
+			if(i%2) == 0
+		} yield i
+
+		println("List of even numbers: ")
+
+		for (item <- evenNums) {
+			println(item)
+		}
 
 	}
 }
