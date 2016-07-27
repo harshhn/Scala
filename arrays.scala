@@ -63,6 +63,12 @@ object arrays {
 		//sort the array in descending order
 		val descSorted = nums.sortWith(_>_)
 
+		//print an array as a delimited string
+		println("Printing array as strings...")
+
+		//This will print the contents of the array as (, ) separated strings
+		println(descSorted.deep.mkString(", ")) 
+
 		//yield is used to modify array element and return the modified value
 		var numModified = for(i <- nums) yield i * 5
 
